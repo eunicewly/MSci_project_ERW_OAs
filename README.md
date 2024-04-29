@@ -48,6 +48,7 @@ For PCA with only organic acids (OAs)
 ```
 # PCA WITHOUT HCL, with only OAs
 test6 <- read.csv('pca_test_all(pH_added_removed_Sr_Mo_ZEROS_added).csv', header=TRUE, row.names = 1)
+# removing the HCl sample rows, then remove Na and Zn columns
 hcl <- c("HClA","HClB","HClC","HClD","HClE","HClF","HClG")
 test6 <- test6[!(rownames(test6) %in% hcl), ]
 test6 <- test6[, !(colnames(test6) == "Na")]
